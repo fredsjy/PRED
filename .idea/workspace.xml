@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="fca90636-1cb2-4784-8f53-090d08790088" name="Default" comment="" />
+=======
+    <list default="true" id="fca90636-1cb2-4784-8f53-090d08790088" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/captions_to_vectors/nn_captions.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/captions_to_vectors/norm_dataset.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/captions_to_vectors/retrieve_vectors.py" afterPath="$PROJECT_DIR$/captions_to_vectors/retrieve_vectors.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/pascal-sentences/load_images.py" afterPath="$PROJECT_DIR$/data/pascal-sentences/load_images.py" />
+    </list>
+>>>>>>> dev_captions_nn
     <ignored path="PRED.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,7 +28,36 @@
     <favorites_list name="PRED" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf />
+=======
+    <leaf>
+      <file leaf-file-name="nn_captions.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/captions_to_vectors/nn_captions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="norm_dataset.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/captions_to_vectors/norm_dataset.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+>>>>>>> dev_captions_nn
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -460,6 +498,14 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/captions_to_vectors/model_with_training_data">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state />
+      </provider>
+    </entry>
+>>>>>>> dev_captions_nn
     <entry file="file://$USER_HOME$/anaconda/lib/python3.5/site-packages/skimage/io/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -476,6 +522,17 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/captions_to_vectors/cap2vec.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> dev_captions_nn
     <entry file="file://$USER_HOME$/anaconda/lib/python3.5/site-packages/gensim/models/doc2vec.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1687">
@@ -516,7 +573,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+<<<<<<< HEAD
           <folding />
+=======
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+>>>>>>> dev_captions_nn
         </state>
       </provider>
     </entry>
@@ -613,6 +676,19 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/captions_to_vectors/captions_to_vectors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> dev_captions_nn
     <entry file="file://$PROJECT_DIR$/captions_to_vectors/tsne.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -623,13 +699,18 @@
         <state relative-caret-position="75">
           <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
           <folding>
+<<<<<<< HEAD
             <element signature="e#0#13#0" expanded="false" />
+=======
+            <element signature="e#0#13#0" expanded="true" />
+>>>>>>> dev_captions_nn
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/captions_to_vectors/norm_dataset.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="360">
           <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
           <folding />
@@ -645,12 +726,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+=======
+        <state relative-caret-position="0">
+          <caret line="54" column="23" selection-start-line="54" selection-start-column="23" selection-end-line="54" selection-end-column="23" />
+>>>>>>> dev_captions_nn
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/captions_to_vectors/cap2vec.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -659,5 +745,7 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> dev_captions_nn
   </component>
 </project>
