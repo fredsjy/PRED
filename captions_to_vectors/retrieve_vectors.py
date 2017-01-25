@@ -9,28 +9,34 @@ for i, vec in enumerate(model.docvecs):
 
 X = np.array(vectors)
 
-def plot_with_labels(low_dim_embs, labels, filename='tsne.png'):
-  assert low_dim_embs.shape[0] >= len(labels), "More labels than embeddings"
-  plt.figure(figsize=(18, 18))  # in inches
-  for i, label in enumerate(labels):
-    x, y = low_dim_embs[i, :]
-    plt.scatter(x, y)
-    plt.annotate(label,
-                 xy=(x, y),
-                 xytext=(5, 2),
-                 textcoords='offset points',
-                 ha='right',
-                 va='bottom')
+print(label)
 
-  plt.savefig(filename)
+#############
 
-from sklearn.manifold import TSNE
-import matplotlib.pyplot as plt
-plot_only = 150
-tsne = TSNE(perplexity=30, n_components=2, n_iter=5000)
-low_dim_embs = tsne.fit_transform(X[:plot_only, :])
-labels = [label[i] for i in range(plot_only)]
-plot_with_labels(low_dim_embs, labels)
+# def plot_with_labels(low_dim_embs, labels, filename='tsne.png'):
+#   assert low_dim_embs.shape[0] >= len(labels), "More labels than embeddings"
+#   plt.figure(figsize=(18, 18))  # in inches
+#   for i, label in enumerate(labels):
+#     x, y = low_dim_embs[i, :]
+#     plt.scatter(x, y)
+#     plt.annotate(label,
+#                  xy=(x, y),
+#                  xytext=(5, 2),
+#                  textcoords='offset points',
+#                  ha='right',
+#                  va='bottom')
+#
+#   plt.savefig(filename)
+#
+# from sklearn.manifold import TSNE
+# import matplotlib.pyplot as plt
+# plot_only = 150
+# tsne = TSNE(perplexity=30, n_components=2, n_iter=5000)
+# low_dim_embs = tsne.fit_transform(X[:plot_only, :])
+# labels = [label[i] for i in range(plot_only)]
+# plot_with_labels(low_dim_embs, labels)
+
+###############
 
 # import numpy as np
 # from matplotlib import pyplot as plt

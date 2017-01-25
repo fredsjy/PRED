@@ -1,6 +1,7 @@
 import tensorflow as tf
 import numpy as np
 from skimage import io
+from skimage.transform import resize
 
 # def get_image(image_path):
 #     """Reads the jpg image from image_path.
@@ -17,9 +18,14 @@ from skimage import io
 # img1 = tf.image.decode_jpeg(tf.read_file("ps_images/2.jpg"), channels = 3)
 
 img = io.imread("ps_images/1.jpg")
-print(img)
-print("--------")
-print(img[0].T.ravel())
+# print(img)
+# print("--------")
+# print(img[0].T.ravel())
+img1 = resize(img,(500,300))
+r = img1[:,:,0].flatten()
+g = img1[:,:,1].flatten()
+b = img1[:,:,2].flatten()
+print((r + g + b).shape)
 # print(np.reshape(img, (1, img.shape[0]*img.shape[1]*img.shape[2])))
 
 
