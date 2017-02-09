@@ -86,11 +86,6 @@ class NormData(object):
         for img_name in img_names:
             img = io.imread(self.images_src+img_name)
             img_resize = resize(img, (28, 28))
-            # r = img_resize[:, :, 0].flatten()
-            # g = img_resize[:, :, 1].flatten()
-            # b = img_resize[:, :, 2].flatten()
-            # image = np.append(r,g)
-            # image = np.append(image,b)
             self.images.append(img_resize)
 
 
