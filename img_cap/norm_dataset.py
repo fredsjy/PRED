@@ -48,7 +48,8 @@ class NormData(object):
         # print(words_number[0])
 
         # construct a doc2vec model
-        model = gensim.models.Doc2Vec(words_number, dbow_words=1, size=1024, window=8, min_count=5, workers=4)
+
+        model = gensim.models.Doc2Vec(words_number, dm=0, dbow_words=1,size=1024, window=8, min_count=5, workers=4)
 
         # extract captions vectors and keys
         self.captions = [None] * model.docvecs.__len__()
@@ -87,11 +88,6 @@ class NormData(object):
         for img_name in img_names:
             img = io.imread(self.images_src+img_name)
             img_resize = resize(img, (28, 28))
-            # r = img_resize[:, :, 0].flatten()
-            # g = img_resize[:, :, 1].flatten()
-            # b = img_resize[:, :, 2].flatten()
-            # image = np.append(r,g)
-            # image = np.append(image,b)
             self.images.append(img_resize)
 
 

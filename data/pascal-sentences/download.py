@@ -32,15 +32,6 @@ if not os.path.exists(path_captions):
     os.makedirs(path_captions)
 
 # write captions
-# for i in range(len(captions)):
-#     with open(path_captions+'/{}.txt'.format(i+1), 'w') as f:
-#         f.write('\n'.join(captions[i]))
-
-# write labels
-# with open('labels.txt','w') as f:
-#     f.write('\n'.join(lables))
-
 for i in range(len(imgs_url)):
-    # data = urllib.request.urlopen(imgs_url[i]).read()
     fileName = path_imgs + r"/{0}.jpg".format(i+1)
     urllib.request.urlretrieve(imgs_url[i], fileName)

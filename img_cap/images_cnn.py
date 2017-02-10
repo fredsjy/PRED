@@ -1,24 +1,12 @@
 import pickle
 import random
-
 import numpy as np
 import tensorflow as tf
-
-#
-# n = norm_dataset.NormData(images_directory="../data/pascal-sentences/ps_images/"
-#                           ,label_file="../data/pascal-sentences/labels.txt"
-#                           ,captions_directory="../data/pascal-sentences/ps_captions/")
-# pickle.dump(n,open('normData','wb'))
 
 n = pickle.load(open("../captions_vectors_nn/normData","rb"))
 
 data_nd = np.array(n.images)
 label_nd = np.array(n.labels)
-
-# train_image = np.array(data_nd)
-# train_label = np.array(label_nd)
-# test_image = np.array(data_nd)
-# test_label = np.array(label_nd)
 
 train_data = []
 test_data = []
@@ -59,7 +47,6 @@ def compute_accuracy(v_xs, v_ys):
     accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
     result = sess.run(accuracy, feed_dict={xs: v_xs, ys: v_ys, keep_prob: 1})
     return result
-
 
 def weight_variable(shape):
     initial = tf.truncated_normal(shape, stddev=0.1)
@@ -121,38 +108,7 @@ else:
 sess.run(init)
 
 for i in range(500):
-    # train_image_shuffle, train_label_shuffle = shuffle_dataset(train_image, train_label)
-    # test_image_shuffle, test_label_shuffle = shuffle_dataset(test_image, test_label)
-
-    # BATCH_SIZE = len(train_label_shuffle)
-    # train_image_batch = np.array([None] * int(len(train_image_shuffle)/BATCH_SIZE))
-    # train_label_batch = np.array([None] * int(len(train_label_shuffle)/BATCH_SIZE))
-    # for i in range(int(len(train_image)/BATCH_SIZE)):
-    #     train_image_batch[i] = train_image[i * BATCH_SIZE:(i + 1) * BATCH_SIZE]
-    #     train_label_batch[i] = train_label[i * BATCH_SIZE:(i + 1) * BATCH_SIZE]
-    # # train_image_batch1 = train_image[0:200]
-    # # train_image_batch2 = train_image[200:400]
-    # # train_image_batch3 = train_image[400:600]
-    # # train_image_batch4 = train_image[600:800]
-    # # train_image_batch5 = train_image[800:1000]
-    # # train_label_batch1 = train_label[0:200]
-    # # train_label_batch2 = train_label[200:400]
-    # # train_label_batch3 = train_label[400:600]
-    # # train_label_batch4 = train_label[600:800]
-    # # train_label_batch5 = train_label[800:1000]
-    #
-    # # for i in range(30):
-    # for ii in range(int(len(train_image_batch))):
     sess.run(train_step,feed_dict={xs: data_nd,ys: label_nd, keep_prob: 0.5})
-    # sess.run(train_step, feed_dict={xs: train_image_batch1, ys: train_label_batch1, keep_prob: 0.5})
-    # sess.run(train_step, feed_dict={xs: train_image_batch2, ys: train_label_batch2, keep_prob: 0.5})
-    # sess.run(train_step, feed_dict={xs: train_image_batch3, ys: train_label_batch3, keep_prob: 0.5})
-    # sess.run(train_step, feed_dict={xs: train_image_batch4, ys: train_label_batch4, keep_prob: 0.5})
-    # sess.run(train_step, feed_dict={xs: train_image_batch5, ys: train_label_batch5, keep_prob: 0.5})
     if i % 10 == 0:
         accuracy = 100 * compute_accuracy(data_nd, label_nd)
         print(accuracy)
-
-# vecs = sess.run(h_fc1_drop,feed_dict={xs:data_nd,keep_prob:0.5})
-# fc2_pre = sess.run(prediction,feed_dict={xs:data_nd,keep_prob:0.5})
-# pickle.dump(fc2_pre,open('fc2_pre','wb'))
