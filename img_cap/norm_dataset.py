@@ -47,7 +47,7 @@ class NormData(object):
             words_number.append(analyzed_document(words, number))
 
         # construct a doc2vec model
-        model = gensim.models.Doc2Vec(words_number, dm=0, dbow_words=1,size=1024          , window=8, min_count=5, workers=4)
+        model = gensim.models.Doc2Vec(words_number, dm=0, dbow_words=1,size=1024, window=8, min_count=5, workers=4)
 
         # extract captions vectors and keys
         self.captions = [None] * model.docvecs.__len__()
