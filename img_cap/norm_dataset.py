@@ -45,9 +45,10 @@ class NormData(object):
             words = document[0].replace('.','\n').lower().split()
             number = [document[1]]
             words_number.append(analyzed_document(words, number))
+        # print(words_number[0])
 
         # construct a doc2vec model
-        model = gensim.models.Doc2Vec(words_number, dm=0, dbow_words=1,size=1024          , window=8, min_count=5, workers=4)
+        model = gensim.models.Doc2Vec(words_number, dbow_words=1, size=1024, window=8, min_count=5, workers=4)
 
         # extract captions vectors and keys
         self.captions = [None] * model.docvecs.__len__()
@@ -95,6 +96,5 @@ class NormData(object):
 
 
 if __name__ == "__main__":
-    pass
     # n = NormData("../data/pascal-sentences/ps_captions/", label_file="../data/pascal-sentences/labels.txt", images_directory="../data/pascal-sentences/ps_images/")
-
+    pass

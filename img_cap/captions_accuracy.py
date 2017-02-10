@@ -40,8 +40,8 @@ for i in range(1000):
         test_data.append(data_nd[i])
         test_label.append(label_nd[i])
 
-train_data_nd = np.array(train_data)
-train_label_nd = np.array(train_label)
+# train_data_nd = np.array(train_data)
+# train_label_nd = np.array(train_label)
 test_data_nd = np.array(test_data)
 test_label_nd = np.array(test_label)
 #########
