@@ -10,4 +10,4 @@ Tutor : Hoel LE CAPITAINE
 
 ./img_cap : including the .py files and the intermediate files produced by the code and using in the code
 
-./img_cap/recette-code.ipynb : jupyter notebook, including the explanation of the files and the all source code 
+./img_cap/recette-code.ipynb : jupyter notebook, including the explanation of the files and all source code 
