@@ -10,7 +10,7 @@ import tensorflow as tf
 #                           ,captions_directory="../data/pascal-sentences/ps_captions/")
 # pickle.dump(n,open('normData','wb'))
 
-n = pickle.load(open("../captions_vectors_nn/normData","rb"))
+n = pickle.load(open("normData","rb"))
 
 data_nd = np.array(n.images)
 label_nd = np.array(n.labels)
@@ -97,6 +97,14 @@ b_conv2 = bias_variable([32])
 h_conv2 = tf.nn.relu(conv2d(h_pool1, W_conv2) + b_conv2)  # output size 14x14x64
 h_pool2 = max_pool_2x2(h_conv2)  # output size 64个7x7
 
+## if use fc1, use like this. if use fc2, replace the following code with "fc1 layer and fc2 layer"##
+# ## fc1 layer ##
+# h_pool2_flat = tf.reshape(h_pool2, [-1,32*7*7])
+# W_fc1 = weight_variable([32*7*7, 20])
+# b_fc1 = bias_variable([20])
+# h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
+# prediction = tf.nn.softmax(h_fc1)
+
 
 ## fc1 layer ##
 h_pool2_flat = tf.reshape(h_pool2, [-1,32*7*7])
@@ -120,7 +128,7 @@ else:
     init = tf.global_variables_initializer()
 sess.run(init)
 
-for i in range(500):
+for i in range(1000):
     # train_image_shuffle, train_label_shuffle = shuffle_dataset(train_image, train_label)
     # test_image_shuffle, test_label_shuffle = shuffle_dataset(test_image, test_label)
 
@@ -154,5 +162,11 @@ for i in range(500):
         print(accuracy)
 
 # vecs = sess.run(h_fc1_drop,feed_dict={xs:data_nd,keep_prob:0.5})
-# fc2_pre = sess.run(prediction,feed_dict={xs:data_nd,keep_prob:0.5})
-# pickle.dump(fc2_pre,open('fc2_pre','wb'))
+
+# get the vectors of fc2
+fc2_pre = sess.run(prediction,feed_dict={xs:data_nd,keep_prob:0.5})
+pickle.dump(fc2_pre,open('fc2_pre','wb'))
+
+# get the vectors of fc1
+# fc1_pre = sess.run(prediction,feed_dict={xs:data_nd,keep_prob:0.5})
+# pickle.dump(fc1_pre,open('fc1_pre','wb'))

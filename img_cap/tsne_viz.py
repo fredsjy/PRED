@@ -12,7 +12,7 @@ cap_vec = pickle.load(open('cap_vec','rb'))
 
 captions_images_vectors = np.array([None]*1000)
 
-# join the vectors
+# union the vectors
 for i in range(len(captions_images_vectors)):
     captions_images_vectors[i] = np.append(cap_vec[i],fc2_pre[i])
 

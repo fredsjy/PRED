@@ -96,5 +96,6 @@ class NormData(object):
 
 
 if __name__ == "__main__":
-    # n = NormData("../data/pascal-sentences/ps_captions/", label_file="../data/pascal-sentences/labels.txt", images_directory="../data/pascal-sentences/ps_images/")
+    n = NormData(label_file="../data/pascal-sentences/labels.txt")#"../data/pascal-sentences/ps_captions/", label_file="../data/pascal-sentences/labels.txt", images_directory="../data/pascal-sentences/ps_images/")
+    print(n.labels[210])
     pass

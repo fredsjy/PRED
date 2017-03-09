@@ -109,15 +109,18 @@ train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)
 sess = tf.InteractiveSession()
 tf.global_variables_initializer().run()
 
+# accuracy
 correct_prediction = tf.equal(tf.argmax(y,1), tf.argmax(y_,1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
+# train
 for i in range(20000):
     sess.run(train_step, feed_dict={x: train_data_nd, y_: train_label_nd})
     if i % 200 == 0:
         print(i, ',accuracy:', sess.run(accuracy, feed_dict={x: train_data_nd, y_: train_label_nd}))
 
 
+# get the captions vectors
 cap_vec = sess.run(tf.nn.softmax(y),feed_dict={x:train_data_nd})
 pickle.dump(cap_vec,open('cap_vec','wb'))
 
